@@ -31,7 +31,7 @@
                     <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul>
                 <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
+                    <a id="login">
                         <span class="fa fa-sign-in"> </span> Login
                     </a>
                 </span>
@@ -42,7 +42,7 @@
     <div id="loginModal" class="modal fade" role="dialog">
         <div class="modal-dialog modal-lg" role="content">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header" id="loginHearder">
                     <h4 class="modal-title">Login</h4>
                     <button type="button" class="close" data-dismiss="modal">
                         &times;
@@ -88,9 +88,7 @@
                     <img src="img/logo.png" class="img-fluid">
                 </div>
                 <div class="col-12 col-sm align-self-center">
-                    <a class="btn btn-block btn-sm btn-warning"
-                       data-toggle="modal"
-                       data-target="#reserveModal">
+                    <a class="btn btn-block btn-sm btn-warning" id="reserve">
                         <h5>Reserve Table</h5>
                     </a>   
                 </div>
@@ -147,13 +145,13 @@
 
                     <div class="form-group row">
                         <label class="col-12 col-sm-2 col-form-label">Section</label>
-                        <div class="col-sm-4 btn-group">
-                            <button class="btn btn-success">
-                                No-Smoking
-                            </button>
-                            <button class="btn btn-danger">
-                                Smoking
-                            </button>
+                        <div class="col-sm-4 btn-group btn-group-toggle" data-toggle="buttons">
+                            <label class="btn btn-success active">
+                                <input type="radio"> Non-Smoking
+                            </label>
+                            <label class="btn btn-danger">
+                                <input type="radio"> Smoking
+                            </label>
                         </div>
                     </div>
 
@@ -290,8 +288,8 @@
         <!--
         <div class="row row-content" id="table">
             <div class="col-12 offset-sm-2 col-sm-8">
-                <h3 id="reserve" class="card-header col-sm-10 bg-warning text-white">Reserve a Table</h3>
-                <form class="col-12 form-control col-sm-10 align-self-center" id="reservetable">
+                <h3 id="reserveTable" class="card-header col-sm-10 bg-warning text-white">Reserve a Table</h3>
+                <form class="col-12 form-control col-sm-10 align-self-center">
                     <div class="form-group row mt-4">
                         <label for="numberofguests" class="col-sm-2 col-form-label mt-0">Number of Guests</label>
                         <div class="col-sm-8">
@@ -402,24 +400,7 @@
         });
     </script> 
     -->
-
-    <script>
-        $(document).ready(function(){
-            $('#mycarousel').carousel({ interval: 2000 });
-            $('#carouselButton').click(function(){
-                if ($('#carouselButton').children('span').hasClass('fa-pause')) {    
-                    $('#mycarousel').carousel('pause')
-                    $('#carouselButton').children('span').removeClass('fa-pause')
-                    $('#carouselButton').children('span').addClass('fa-play')
-                }
-                else if ($('#carouselButton').children('span').hasClass('fa-play')) {
-                         $('#mycarousel').carousel('cycle')
-                         $('#carouselButton').children('span').removeClass('fa-play')
-                         $('#carouselButton').children('span').addClass('fa-pause')
-                }
-            });
-        });
-    </script>
+    <script src="JS/scripts.js"></script>
 </body>
 
 </html>
